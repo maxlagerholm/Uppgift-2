@@ -1,0 +1,118 @@
+
+/* body ställer in övergripande format för hela sidan om inget annat anges eller sätts i en class */
+body {
+    background-color:lightgrey;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+h1 {
+    color: black;
+}
+h2 {
+    color: black;
+}
+h3 {
+    color: black;
+}
+h4 {
+    color: black;
+}
+/* paragraph */
+p {
+    color: black;
+    font-size: small;
+}
+p.text {
+    color: black;
+    font-size: large;
+}
+/* ordered list */
+ol {
+    border: 2px solid rgb(255, 124, 124);
+    background-color: rgb(189, 189, 189);
+    width: 150px;
+    padding: 40px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin: 2px;
+}
+/* list entry */
+li {
+    margin: 8px;
+    font-weight: bold;
+}
+img {
+    border: 2px solid black;
+}
+/* img.logo är en specifik klass för logo-bilden och kopplas med <img class="logo">...</img> */
+img.logo {
+    border: 1px solid black;
+    width: 260px;
+    height: 80px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+figcaption {
+    font-size: medium;
+    font-weight: bold;
+    padding-left: 270px;
+}
+
+/* klass som centrerar objekt med hjälp av class="center" */
+.center {
+display: block;
+margin-left: auto;
+margin-right: auto;
+width: 50%;
+}
+
+/* specifik klass för att ta bort klassiskt länkutseende */
+.länk {
+    color: black;
+    text-decoration: none; /* no underline */ 
+    font-size: x-large;
+}
+.länk:hover {
+    color: black;
+    text-decoration: none; /* no underline */ 
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+/* ---------------- Gammalt - Test ---------------- /*
+
+/* specifika val kan också göras till de olika header storlekarna och kopplas med <h1 class="text">...</h1> t.ex: */
+h1.text {
+    color: aqua;
+}
+
+
+/* p.menu är en specifik klass för Paragrafer och kopplas med <p class="menu">...</p> */
+p.menu {
+    color: black;
+    font-size: medium;
+    font-style: normal;
+    font-weight: bold;
+    border: 1px solid darkslategray;
+    padding: 5px;
+    margin: 1px;
+    width: 400px;
+}
+
+
+/* li.twitch är en specifik klass för en rad i en Lista och kopplas med <li class="twitch">...</li> */
+li.twitch {
+    background-color: blueviolet;
+    color: blueviolet;
+}
+
