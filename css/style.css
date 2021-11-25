@@ -1,32 +1,54 @@
 
-/* body ställer in övergripande format för hela sidan om inget annat anges eller sätts i en class */
 body {
     background-color:lightgrey;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
-}
-h1 {
     color: black;
 }
-h2 {
-    color: black;
-}
-h3 {
-    color: black;
-}
-h4 {
-    color: black;
-}
-/* paragraph */
+
 p {
-    color: black;
-    font-size: small;
-}
-p.text {
-    color: black;
+    text-align: center;
     font-size: large;
 }
-/* ordered list */
+
+.text-center {
+    text-align: center;
+}
+
+.center {                                       /* klass som centrerar objekt */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    text-align: center;
+    }
+    
+.menu {
+        background-color: rgb(92, 23, 23);
+        overflow: hidden;
+}
+        
+.menu a {
+        display: block;
+        float: left;
+        color: white;
+        font-size: large;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 15px;
+        padding-right: 15px;
+        text-decoration: none;
+}
+
+.menu a:hover {
+        background-color: rgb(160, 93, 93);
+        color: white;
+}
+        
 ol {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
     border: 2px solid rgb(255, 124, 124);
     background-color: rgb(189, 189, 189);
     width: 150px;
@@ -34,17 +56,42 @@ ol {
     padding-top: 0px;
     padding-bottom: 0px;
     margin: 2px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
-/* list entry */
+  
 li {
     margin: 8px;
-    font-weight: bold;
 }
-img {
-    border: 2px solid black;
+
+img.aSpin {                                     /* alla bilder med klassen 'aSpin' har denna @keyframe animationen */
+    animation-name: aSpin;                      /* namn på keyframe (animation) att använda */
+    animation-duration: 8s;                     /* hur länge animationen pågår */
+    animation-direction: normal;                /* vilket håll bilden ska rotera */
+    animation-timing-function: linear;          /* bestämmer att den ska snurra jämnt och inte "east-out" */
+    animation-iteration-count: infinite;        /* antalet gånger animationen ska upprepas (infinite = oändligt) */
 }
-/* img.logo är en specifik klass för logo-bilden och kopplas med <img class="logo">...</img> */
-img.logo {
+
+@keyframes aSpin {                              /* namn på animationen ('aSpin') - Snurr effekt av bild */ 
+    100% {                                      /* 100% av animationen */
+        transform: rotate(360deg);              /* roterar bilden 360grader. Antal varv ändras i klassen ovan. Kan även använda (1turn) */
+    }
+}
+
+img.transition {                                /* alla bilder med klassen 'transition' har denna animation */
+    width: 40%;                                 /* utgår från variabeln "width" på bilden */
+    transition-property: width;                 /* vilken variabel 'transition' (animationen) ska beröra */
+    transition-duration: 0.7s;                  /* hur länge animationen pågår, 0 = insta */
+    transition-delay: 0s;                       /* hur länge innan animationen början, 0 = insta */
+}
+
+img.transition:hover {
+    width: 43%;                                 /* hur bred bilden blir när animationen är färdig, (när man tar muspekaren över bilden) */
+}
+
+img.logo {                                      /* specifik klass för logo-bilden */
     border: 1px solid black;
     width: 260px;
     height: 80px;
@@ -57,62 +104,41 @@ img.logo {
     margin-right: auto;
 }
 
+img.food {                                      /* specifik klass för mat-bilderna */
+    border: 2px solid black;
+    width: 32%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 figcaption {
     font-size: medium;
     font-weight: bold;
-    padding-left: 270px;
+    text-align: center;
+    padding-top: 0px;
 }
 
-/* klass som centrerar objekt med hjälp av class="center" */
-.center {
-display: block;
-margin-left: auto;
-margin-right: auto;
-width: 50%;
-}
-
-/* specifik klass för att ta bort klassiskt länkutseende */
-.länk {
+.link {
+    display: block;
     color: black;
-    text-decoration: none; /* no underline */ 
+    text-decoration: none;
     font-size: x-large;
+    text-align: center;
 }
-.länk:hover {
+
+.link:hover {
+    display: block;
     color: black;
-    text-decoration: none; /* no underline */ 
+    text-decoration: none;
     font-weight: bold;
+    text-align: center;
 }
 
+@media only screen and (max-width:500px) {
 
-
-
-
-
-
-/* ---------------- Gammalt - Test ---------------- /*
-
-/* specifika val kan också göras till de olika header storlekarna och kopplas med <h1 class="text">...</h1> t.ex: */
-h1.text {
-    color: aqua;
 }
-
-
-/* p.menu är en specifik klass för Paragrafer och kopplas med <p class="menu">...</p> */
-p.menu {
-    color: black;
-    font-size: medium;
-    font-style: normal;
-    font-weight: bold;
-    border: 1px solid darkslategray;
-    padding: 5px;
-    margin: 1px;
-    width: 400px;
-}
-
-
-/* li.twitch är en specifik klass för en rad i en Lista och kopplas med <li class="twitch">...</li> */
-li.twitch {
-    background-color: blueviolet;
-    color: blueviolet;
-}
-
